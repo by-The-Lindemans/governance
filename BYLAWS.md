@@ -144,7 +144,6 @@
    - **Software Executables**: All compiled software executables, including but not limited to applications, libraries, and binaries, are exempt from the open-source policy. While source code may be open-source under MPLv2, the corporation reserves all rights to distributing and licensing compiled software versions.
    - **Governance Documents**: All governance documents, including bylaws, policies, and processes related to corporate governance, shall be licensed under the **Creative Commons Zero (CC0-1.0)** license. This ensures that these documents are available in the public domain, allowing anyone to use, modify, and share them.
 
-
 3. **Ownership**:
    - All intellectual property, whether open-source or proprietary, created by employees or contractors as part of their role within the company shall remain the exclusive property of **by The Lindemans, inc.** The corporation retains the right to use, modify, and distribute this intellectual property at its discretion.
 
