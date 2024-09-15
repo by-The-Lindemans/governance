@@ -79,7 +79,7 @@
    - Must adhere to role and project time expectations as defined in their contract.
 
 6. **Job Titles and Teams**:
-   - Employees may join any project based on their interest and skills.
+   - Employees may join any project based on their interests and skills.
    - Team performance and management decisions are at the discretion of its members.
 
 7. **Performance Reviews**:
@@ -136,15 +136,17 @@
 
 1. **Open-Source Policy**:
    - All work created within the company, including software, documentation, designs, and related assets, shall be published as open-source under the **Mozilla Public License Version 2.0 (MPLv2)**, unless otherwise specified in this clause.
-   - The corporation encourages contributions to open-source projects and believes in transparency and community collaboration for the betterment of its products and services.
+   - The corporation encourages contributions to open-source projects and believes in transparency and community collaboration to improve its products and services.
 
 2. **Exceptions**:
-   - **Paywalled Features**: Any work that pertains to features or services that are restricted behind a paywall is excluded from the open-source policy. The corporation reserves all rights to this intellectual property, and such work will not be made publicly available unless otherwise stated by the corporation.
+   - **Paywalled Features**: Any work on features or services restricted behind a paywall is excluded from the open-source policy. The corporation reserves all rights to this intellectual property, and such work will not be made publicly available unless otherwise stated by the corporation.
    - **Machine Learning Source Code**: Any machine learning models, algorithms, or source code developed by the corporation shall not be subject to the open-source policy. The corporation reserves all rights to this intellectual property to protect proprietary technologies and competitive advantages.
-   - **Software Executables**: All compiled software executables, including but not limited to applications, libraries, and binaries, are exempt from the open-source policy. While source code may be open-source under MPLv2, the corporation reserves all rights to the distribution and licensing of compiled versions of the software.
+   - **Software Executables**: All compiled software executables, including but not limited to applications, libraries, and binaries, are exempt from the open-source policy. While source code may be open-source under MPLv2, the corporation reserves all rights to distributing and licensing compiled software versions.
+   - **Governance Documents**: All governance documents, including bylaws, policies, and processes related to corporate governance, shall be licensed under the **Creative Commons Zero (CC0-1.0)** license. This ensures that these documents are available in the public domain, allowing anyone to use, modify, and share them.
+
 
 3. **Ownership**:
-   - All intellectual property, whether open-source or proprietary, created by employees or contractors as part of their role within the company, shall remain the exclusive property of **by The Lindemans, inc.** The corporation retains the right to use, modify, and distribute this intellectual property at its discretion.
+   - All intellectual property, whether open-source or proprietary, created by employees or contractors as part of their role within the company shall remain the exclusive property of **by The Lindemans, inc.** The corporation retains the right to use, modify, and distribute this intellectual property at its discretion.
 
 4. **Licensing**:
    - For any intellectual property published under MPLv2, the corporation ensures that the terms of the MPLv2 license are followed, allowing for code modification and redistribution under the same license, with proper attribution to the original authors.
