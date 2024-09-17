@@ -15,6 +15,7 @@
    - Responsible for recruiting employees within the hiring budget set by the CFO.
    - Responsible for selecting candidates for all roles, subject to a majority vote from employee shareholders.
    - Managing day-to-day operations.
+   - Responsible for unfilled roles of all other oversight officers.
 
 2. **Chief Operating Officer (COO)**: as-yet unassigned:
    - The first role to be filled after the Co-CEOs and becomes the third board member immediately upon appointment.
