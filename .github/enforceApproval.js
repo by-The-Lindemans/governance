@@ -1,3 +1,5 @@
+// .github/enforceApproval.js
+
 const { Octokit } = require("@octokit/rest");
 const core = require("@actions/core");
 
@@ -8,7 +10,7 @@ const core = require("@actions/core");
 
     // Get repository details from environment variables
     const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
-    const pull_number = process.env.GITHUB_REF.split('/').pop();
+    const pull_number = parseInt(process.env.GITHUB_REF.split('/').pop(), 10);
 
     // Fetch organization members
     const org = owner; // Assuming the owner is the organization
