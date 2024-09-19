@@ -1,0 +1,15 @@
+{
+  "name": "github-action-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for GitHub Actions workflows",
+  "main": "enforceApproval.js",
+  "scripts": {
+    "enforce": "node enforceApproval.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@octokit/rest": "^18.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
