@@ -2,8 +2,9 @@
 //
 // restore280 Institute: Board Consent Enforcement
 //
-// Implements the unanimous written consent requirement of Article VII of the
-// restore280 Bylaws. All active directors must consent before a PR may merge.
+// Implements the board consent requirement of Article VII of the
+// restore280 Bylaws. A majority of then-serving directors, per Section 7.4,
+// must consent before a PR may merge.
 //
 // Two consent methods are accepted:
 //
@@ -12,16 +13,29 @@
 //
 //   2. Comment command: post a comment containing "/consent" anywhere in the
 //      body. Available to all voters including the PR author. Post "/dissent"
-//      to withdraw or oppose. If both appear in one comment, dissent wins.
-//      The most recent command per voter across all comments wins.
+//      to withdraw or oppose. Post "/recuse" to recuse yourself for this PR.
+//      If more than one command appears in one comment, /recuse takes
+//      precedence, then /dissent, then /consent. The most recent command per
+//      voter across all comments wins, so a later /consent or /dissent
+//      reverses an earlier self-recusal, and vice versa.
 //
 // The script explicitly posts a "consent-check" check run to the PR's head
 // SHA via the GitHub Checks API, regardless of what event triggered the
 // workflow. This ensures the PR status check always reflects the current
 // consent state, including when triggered by an issue_comment event.
 //
-// Recusal: add a line "Recusal: @handle" to the PR body to remove a voter
-// from the required list for that PR due to a conflict of interest.
+// Recusal: either add a line "Recusal: @handle" to the PR body (declared,
+// e.g., by the PR author on behalf of an interested director; this form is
+// absolute and can only be reversed by editing the PR body), or a voter may
+// recuse themselves at any time by commenting "/recuse" (reversible by that
+// same voter posting a later /consent or /dissent). Either method removes
+// the voter from the required list for that PR.
+//
+// New commits pushed to an open PR reset consent: existing review approvals
+// and change-requests are dismissed, and existing /consent and /dissent
+// comments are removed after their full content is reproduced in one
+// summary comment first. Recusal is unaffected and persists across new
+// commits. See resetConsentOnNewCommits.
 
 const { Octokit } = require("@octokit/rest");
 const core = require("@actions/core");
@@ -55,12 +69,19 @@ function parseRecusals(body) {
   return recused;
 }
 
-// Fetch /consent and /dissent commands from PR comments.
+// Fetch /consent, /dissent, and /recuse commands from PR comments.
 // Returns a Map of lowercase login -> { state, ts, method: "comment" }
-// If both commands appear in one comment, dissent wins.
-// The most recent command per voter across all comments wins.
-async function fetchCommentConsents(octokit, owner, repo, pull_number, effectiveVoters) {
-  const consentByUser = new Map();
+// where state is one of "APPROVED", "DISSENTED", or "RECUSED".
+// If more than one command appears in one comment, /recuse takes
+// precedence, then /dissent, then /consent.
+// The most recent command per voter across all comments wins, so a later
+// /consent or /dissent reverses an earlier self-recusal, and vice versa.
+//
+// Takes the full registered voter set, not the post-recusal effective
+// voter set, since self-recusal must be detected from these same comments
+// before the effective voter set can be finalized.
+async function fetchCommentSignals(octokit, owner, repo, pull_number, registeredVoters) {
+  const signalByUser = new Map();
   let page = 1;
   while (true) {
     const { data: comments } = await octokit.issues.listComments({
@@ -68,23 +89,116 @@ async function fetchCommentConsents(octokit, owner, repo, pull_number, effective
     });
     for (const comment of comments) {
       const login = (comment.user && comment.user.login || "").toLowerCase();
-      if (!effectiveVoters.has(login)) continue;
+      if (!registeredVoters.has(login)) continue;
       if (comment.user.type === "Bot") continue;
       const body = comment.body || "";
       const ts = new Date(comment.created_at || 0).getTime();
       const hasConsent = /(?:^|\s)\/consent(?:\s|$)/im.test(body);
       const hasDissent = /(?:^|\s)\/dissent(?:\s|$)/im.test(body);
-      if (!hasConsent && !hasDissent) continue;
-      const prev = consentByUser.get(login);
+      const hasRecuse = /(?:^|\s)\/recuse(?:\s|$)/im.test(body);
+      if (!hasConsent && !hasDissent && !hasRecuse) continue;
+      const prev = signalByUser.get(login);
       if (prev && ts < prev.ts) continue;
-      // Dissent wins if both appear in the same comment
-      const state = hasDissent ? "DISSENTED" : "APPROVED";
-      consentByUser.set(login, { state, ts, method: "comment" });
+      const state = hasRecuse ? "RECUSED" : hasDissent ? "DISSENTED" : "APPROVED";
+      signalByUser.set(login, { state, ts, method: "comment" });
     }
     if (comments.length < 100) break;
     page++;
   }
-  return consentByUser;
+  return signalByUser;
+}
+
+// If this run was triggered by new commits being pushed to an already-open
+// PR, any consent given before those commits was given to a version of the
+// matter that no longer exists. Per Bylaws Section 7.1, such consent is
+// invalidated and must be reissued. This function dismisses review
+// approvals and change-requests submitted before the triggering push via
+// GitHub's native dismissal mechanism (which preserves the review in
+// history marked as dismissed, rather than deleting it, since GitHub does
+// not permit deleting a submitted review), and removes /consent and
+// /dissent comments posted before the triggering push after first posting
+// one consolidated comment reproducing their full original content, so nothing
+// is actually lost, only relocated out of the individual comments and into a
+// single record. Consent given after the triggering push is left untouched.
+// Recusal (/recuse comments, and PR-body "Recusal:"
+// declarations, neither of which this function touches) remains in effect
+// independent of any revision to the matter, since a conflict of interest
+// does not depend on the specific text under consideration.
+async function resetConsentOnNewCommits(octokit, owner, repo, pull_number, registeredVoters, cutoffMs) {
+  let reviews = [], rPage = 1;
+  while (true) {
+    const { data } = await octokit.pulls.listReviews({ owner, repo, pull_number, per_page: 100, page: rPage });
+    reviews = reviews.concat(data);
+    if (data.length < 100) break;
+    rPage++;
+  }
+  for (const r of reviews) {
+    const login = (r.user && r.user.login || "").toLowerCase();
+    if (!registeredVoters.has(login)) continue;
+    const submittedMs = Date.parse(r.submitted_at || r.submittedAt || "");
+    if (!Number.isFinite(submittedMs) || submittedMs > cutoffMs) continue;
+    if (r.state !== "APPROVED" && r.state !== "CHANGES_REQUESTED") continue;
+    try {
+      await octokit.pulls.dismissReview({
+        owner, repo, pull_number, review_id: r.id,
+        message: "Dismissed automatically: new commits were pushed to this PR. Please review the updated content and reconsent."
+      });
+    } catch (err) {
+      core.warning(`Could not dismiss review ${r.id}: ${err.message}`);
+    }
+  }
+
+  let comments = [], cPage = 1;
+  while (true) {
+    const { data } = await octokit.issues.listComments({ owner, repo, issue_number: pull_number, per_page: 100, page: cPage });
+    comments = comments.concat(data);
+    if (data.length < 100) break;
+    cPage++;
+  }
+
+  const toRemove = [];
+  for (const c of comments) {
+    const login = (c.user && c.user.login || "").toLowerCase();
+    if (!registeredVoters.has(login)) continue;
+    if (c.user.type === "Bot") continue;
+    const createdMs = Date.parse(c.created_at || "");
+    if (!Number.isFinite(createdMs) || createdMs > cutoffMs) continue;
+    const body = c.body || "";
+    const hasRecuse = /(?:^|\s)\/recuse(?:\s|$)/im.test(body);
+    if (hasRecuse) continue;
+    const hasConsent = /(?:^|\s)\/consent(?:\s|$)/im.test(body);
+    const hasDissent = /(?:^|\s)\/dissent(?:\s|$)/im.test(body);
+    if (!hasConsent && !hasDissent) continue;
+    toRemove.push(c);
+  }
+
+  if (toRemove.length > 0) {
+    const summaryLines = [
+      "## Consent Reset: New Commits Pushed",
+      "",
+      "New commits were pushed to this PR. Per Bylaws Section 7.1, consent is given to a specific version of a matter; the consent and dissent signals below were given before this push and no longer apply. Each director listed must reissue consent against the current version. Original content is reproduced in full below and has been removed from its original comment to avoid confusion about which signals are currently active.",
+      ""
+    ];
+    for (const c of toRemove) {
+      const login = (c.user && c.user.login || "").toLowerCase();
+      summaryLines.push(`**@${login}** (originally posted ${c.created_at}):`, "", "> " + (c.body || "").split("\n").join("\n> "), "");
+    }
+    summaryLines.push("*Posted automatically by the restore280 governance workflow.*");
+
+    try {
+      await octokit.issues.createComment({ owner, repo, issue_number: pull_number, body: summaryLines.join("\n") });
+    } catch (err) {
+      core.warning(`Could not post consent reset summary: ${err.message}`);
+    }
+
+    for (const c of toRemove) {
+      try {
+        await octokit.issues.deleteComment({ owner, repo, comment_id: c.id });
+      } catch (err) {
+        core.warning(`Could not delete comment ${c.id}: ${err.message}`);
+      }
+    }
+  }
 }
 
 // Merge review approvals and comment consents. Most recent signal wins.
@@ -152,9 +266,9 @@ function buildStatusComment(effectiveVoters, mergedConsents, recusedLC, required
       : "⛔ Consent not yet complete.",
     "",
     "**To consent:** Approve via GitHub review, or post a comment containing `/consent`.",
-    "**To dissent:** Post a comment containing `/dissent`. If a comment contains both `/consent` and `/dissent`, dissent takes precedence.",
+    "**To dissent:** Post a comment containing `/dissent`. If a comment contains more than one command, `/recuse` takes precedence, then `/dissent`, then `/consent`.",
     "**To reverse a dissent:** Delete or edit the dissent comment to remove `/dissent`, or post a new comment containing only `/consent`.",
-    "**To recuse:** Add `Recusal: @yourhandle` to the PR description.",
+    "**To recuse:** Add `Recusal: @yourhandle` to the PR description (only reversible by editing the description), or post a comment containing `/recuse` to recuse yourself (reversible by posting a later `/consent` or `/dissent`).",
     "",
     "*Updated automatically by the restore280 governance workflow.*"
   );
@@ -249,7 +363,41 @@ async function postCheckRun(octokit, owner, repo, headSha, conclusion, title, su
     }
 
     const votersLC = new Set(voters.map(v => v.toLowerCase()));
-    const recusedLC = parseRecusals(prBody);
+
+    // If new commits were just pushed to this PR, prior consent no longer
+    // applies to the current content and must be reset before evaluating
+    // consent below, per Bylaws Section 7.1.
+    if (process.env.GITHUB_EVENT_NAME === "pull_request" && payload.action === "synchronize") {
+      // Reset operations are bound to signals that already existed at this
+      // event's pull_request.updated_at cutoff, so consent given afterward
+      // survives a re-run of the same event.
+      const cutoffMs = new Date(payload.pull_request && payload.pull_request.updated_at || 0).getTime();
+      if (!Number.isFinite(cutoffMs) || cutoffMs <= 0) {
+        throw new Error("Cannot safely reset consent: synchronize event has no valid pull_request.updated_at timestamp.");
+      }
+      await resetConsentOnNewCommits(octokit, owner, repo, pull_number, votersLC, cutoffMs);
+    }
+
+    // Recusal declared in the PR body is absolute: it applies regardless of
+    // any comment activity and can only be reversed by editing the PR body.
+    const bodyRecusedLC = parseRecusals(prBody);
+
+    // Fetch comment signals from the full registered voter set (not yet
+    // reduced to effective voters) so that self-recusal via /recuse can be
+    // detected before the effective voter set is finalized.
+    const commentSignals = await fetchCommentSignals(octokit, owner, repo, pull_number, votersLC);
+
+    // Self-recusal is a voter's own choice and, unlike a body-declared
+    // recusal, can be reversed by that same voter posting a later /consent
+    // or /dissent comment. It is in effect only if RECUSED is that voter's
+    // most recent signal.
+    const selfRecusedLC = new Set(
+      [...commentSignals.entries()]
+        .filter(([, sig]) => sig.state === "RECUSED")
+        .map(([v]) => v)
+    );
+
+    const recusedLC = new Set([...bodyRecusedLC, ...selfRecusedLC]);
 
     const allowSelf = cfg.allow_self_approve === true ||
       /^true$/i.test(process.env.ALLOW_SELF_APPROVE || "false");
@@ -303,8 +451,13 @@ async function postCheckRun(octokit, owner, repo, headSha, conclusion, title, su
       }
     }
 
-    // Fetch comment consents
-    const commentMap = await fetchCommentConsents(octokit, owner, repo, pull_number, effectiveVoters);
+    // Reuse the comment signals already fetched above (as part of computing
+    // self-recusal), restricted to the final effective voter set and
+    // excluding RECUSED entries, which are already excluded from
+    // effectiveVoters and have no bearing on the consent/dissent tally.
+    const commentMap = new Map(
+      [...commentSignals.entries()].filter(([v, sig]) => effectiveVoters.has(v) && sig.state !== "RECUSED")
+    );
 
     // Merge both consent sources
     const mergedConsents = mergeConsents(reviewMap, commentMap);
@@ -325,7 +478,7 @@ async function postCheckRun(octokit, owner, repo, headSha, conclusion, title, su
     console.log(`Approved: ${approvedUsers.join(", ") || "none"}`);
     console.log(`Pending: ${pendingUsers.join(", ") || "none"}`);
     console.log(`Dissented/dismissed: ${rejectedUsers.join(", ") || "none"}`);
-    if (recusedLC.size > 0) console.log(`Recused: ${[...recusedLC].join(", ")}`);
+    if (recusedLC.size > 0) console.log(`Recused: ${[...recusedLC].join(", ")} (body: ${[...bodyRecusedLC].join(", ") || "none"}; self: ${[...selfRecusedLC].join(", ") || "none"})`);
 
     // Determine outcome
     const approved = approvedUsers.length;
@@ -365,7 +518,7 @@ async function postCheckRun(octokit, owner, repo, headSha, conclusion, title, su
       passed ? "Consent requirement met" : `Waiting on: ${waiting.join(", ")}`,
       passed
         ? `${approved}/${requiredCount} required consent(s) received. Action may proceed.`
-        : `${approved}/${requiredCount} required consent(s) received. Unanimous consent required.`
+        : `${approved}/${requiredCount} required consent(s) received.`
     );
 
     // Set job outcome

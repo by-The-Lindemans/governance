@@ -43,7 +43,7 @@ The Corporation will handle reports under this policy with as much confidentiali
 
 ## 6. Investigation
 
-The Board Chair, or the Independent Director receiving the report if the concern involves the Board Chair, shall promptly review the concern and determine whether an investigation is warranted. If so, the Board Chair shall designate one or more Independent Directors to conduct the investigation. The investigation shall be documented, and findings shall be reported to the full Board.
+The Board Chair, or the Independent Director receiving the report if the concern involves the Board Chair, shall, within 15 days of notification, review the concern and determine whether an investigation is warranted. If so, the Board Chair shall designate one or more Independent Directors to conduct the investigation. The investigation shall be documented, and findings shall be reported to the full Board.
 
 If the concern involves a potential violation of law, the Board shall consult legal counsel and take appropriate action, which may include reporting to government authorities.
 

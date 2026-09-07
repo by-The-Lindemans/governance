@@ -19,14 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     # For issue_comment events, only run if the comment is on a pull request
-    # and contains a consent command.
+    # and contains a consent, dissent, or recusal command.
     if: |
       github.event_name != 'issue_comment' ||
       (
         github.event.issue.pull_request != null &&
         (
           contains(github.event.comment.body, '/consent') ||
-          contains(github.event.comment.body, '/dissent')
+          contains(github.event.comment.body, '/dissent') ||
+          contains(github.event.comment.body, '/recuse')
         )
       )
 
@@ -52,7 +53,7 @@ jobs:
             npm install --no-audit --no-fund
           fi
 
-      - name: Enforce unanimous board consent
+      - name: Enforce board consent
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # For comment events, pass the PR number explicitly since the

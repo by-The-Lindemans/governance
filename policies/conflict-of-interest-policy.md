@@ -13,7 +13,7 @@ This policy protects the Corporation when it considers entering into a transacti
 
 ## 2. Definitions
 
-**Interested Person.** Any director, officer, or member of a committee with Board-delegated authority who has a direct or indirect financial interest as defined below.
+**Interested Person.** Any director, officer, or member of a committee with Board-delegated authority who has a direct or indirect Financial Interest as defined below.
 
 **Financial Interest.** A person has a financial interest if they have, directly or indirectly, through business, investment, or family:
 
@@ -23,15 +23,15 @@ This policy protects the Corporation when it considers entering into a transacti
 
 (c) a potential ownership or investment interest in, or compensation arrangement with, any entity or individual with which the Corporation is negotiating a transaction or arrangement.
 
-Compensation includes direct and indirect remuneration and gifts or favors that are not insubstantial. A financial interest is not necessarily a conflict of interest. A conflict of interest exists only if the Board determines one exists under the procedures in Section 3.
+Compensation includes direct and indirect remuneration and gifts or favors that are not insubstantial. A Financial Interest is not necessarily a conflict of interest. A conflict of interest exists only if the Board determines one exists under the procedures in Section 3.
 
 ---
 
 ## 3. Procedures
 
-**3.1 Duty to Disclose.** An interested person must disclose the existence of any financial interest and all material facts to the Board or committee considering the proposed transaction or arrangement, before any discussion or vote on the matter.
+**3.1 Duty to Disclose.** An Interested Person must disclose the existence of any Financial Interest and all material facts to the Board or committee considering the proposed transaction or arrangement, before any discussion or vote on the matter.
 
-**3.2 Recusal.** After disclosure and any discussion with the interested person, the interested person shall leave the Board or committee deliberation and the vote on whether a conflict of interest exists. The interested person may make a presentation before leaving but may not participate in deliberation or vote.
+**3.2 Recusal.** After disclosure and any discussion with the Interested Person, the Interested Person shall leave the Board or committee deliberation and the vote on whether a conflict of interest exists. The Interested Person may make a presentation before leaving but may not participate in deliberation or vote.
 
 **3.3 Resolution.** The remaining disinterested directors shall determine by majority vote whether the Corporation can obtain a more advantageous transaction or arrangement from a party that would not give rise to a conflict of interest. If not, they shall determine whether the proposed transaction or arrangement is in the Corporation's best interest and fair and reasonable, and make their decision accordingly.
 
@@ -41,7 +41,7 @@ Compensation includes direct and indirect remuneration and gifts or favors that 
 
 ## 4. Records
 
-The records of all Board and committee actions shall include: the names of persons disclosing or found to have a financial interest; the nature of the interest; any action taken to determine whether a conflict existed; the Board's or committee's determination; the names of persons present for discussion and vote; and the content of the discussion and any vote taken.
+The records of all Board and committee actions shall include: the names of persons disclosing or found to have a Financial Interest; the nature of the interest; any action taken to determine whether a conflict existed; the Board's or committee's determination; the names of persons present for discussion and vote; and the content of the discussion and any vote taken.
 
 ---
 
@@ -53,7 +53,7 @@ A director who receives compensation from the Corporation for services is preclu
 
 ## 6. Annual Disclosure Requirement
 
-Each director, officer, and key employee shall annually sign a disclosure statement confirming that they have received, read, and agreed to comply with this policy, and disclosing any financial interests that may constitute a conflict. The Executive Director shall collect signed disclosures before the annual governance review under Bylaws Section 7.5 and retain them in the corporate records.
+Each director, officer, and key employee shall annually sign a disclosure statement confirming that they have received, read, and agreed to comply with this policy, and disclosing any Financial Interests that may constitute a conflict. The Executive Director shall collect signed disclosures before the annual governance review under Bylaws Section 7.5 and retain them in the corporate records.
 
 ---
 
@@ -80,7 +80,7 @@ The Board shall periodically review this policy to ensure it remains consistent 
 
 **Part I: Acknowledgment**
 
-I have received, read, and understand the restore280 Institute Conflict of Interest Policy. I agree to comply with the policy in all respects and to promptly disclose any financial interest that arises during the year that may constitute a conflict.
+I have received, read, and understand the restore280 Institute Conflict of Interest Policy. I agree to comply with the policy in all respects and to disclose, within 15 days of notification, any Financial Interest that arises during the year that may constitute a conflict.
 
 ---
 
@@ -88,9 +88,9 @@ I have received, read, and understand the restore280 Institute Conflict of Inter
 
 *Check one:*
 
-[ ] I have no financial interests to disclose that may constitute a conflict of interest under the Conflict of Interest Policy.
+[ ] I have no Financial Interests to disclose that may constitute a conflict of interest under the Conflict of Interest Policy.
 
-[ ] I have the following financial interests to disclose (describe each below):
+[ ] I have the following Financial Interests to disclose (describe each below):
 
 _______________________________________________
 

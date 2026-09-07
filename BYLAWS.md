@@ -19,7 +19,7 @@
 - [Article XI: Indemnification and Insurance](#article-xi-indemnification-and-insurance)
 - [Article XII: Records](#article-xii-records)
 - [Article XIII: Amendments](#article-xiii-amendments)
-- [Article XIV: Dissolution](#article-xiv-dissolution)
+- [Article XIV: Dissolution, Merger, and Fundamental Restructuring](#article-xiv-dissolution-merger-and-fundamental-restructuring)
 
 ---
 
@@ -42,6 +42,30 @@ The principal office of the Corporation shall be at such address as the Board of
 ### 1.4 Registered Office and Agent
 
 The Corporation's registered office in the State of Delaware is 16192 Coastal Highway, Lewes, Delaware 19958, County of Sussex. The registered agent at that address is Harvard Business Services, Inc. The Board may change the registered agent or registered office in accordance with Delaware law by filing the required certificate.
+
+### 1.5 Mission and Governing Principles
+
+The Corporation's work is guided by the following principles, which inform how the Corporation interprets and applies its mission over time:
+
+(a) protection and advancement of human dignity;
+
+(b) meaningful human autonomy and the material conditions necessary for genuine choice;
+
+(c) reduction of preventable systemic coercion, deprivation, exploitation, and institutional failure;
+
+(d) a focus on systemic causes, institutional structures, market failures, and available leverage points rather than solely on downstream symptoms;
+
+(e) evidence-based analysis using the best reasonably available information;
+
+(f) explicit differentiation between established evidence, inference, uncertainty, and normative judgment;
+
+(g) universal application of these principles rather than selective application based on political, ideological, institutional, or donor interests;
+
+(h) willingness to revise conclusions, strategies, and programs when better evidence becomes available; and
+
+(i) long-term institutional effectiveness rather than preservation of any particular program, strategy, leadership preference, or organizational tradition.
+
+These principles govern the Corporation's specific activities and issue areas, which may evolve over time consistent with them.
 
 ---
 
@@ -111,9 +135,23 @@ The Board shall elect a Chair from among its Independent Directors pursuant to A
 
 ### 3.11 Document Authentication
 
-The Executive Director maintains the official records of the Corporation as specified in Article XII and Section 7.6, and gives notice of Board actions as required by these Bylaws.
+A Party designated by the Executive Director maintains the official records of the Corporation as specified in Article XII and Section 7.6, and gives notice of Board actions as required by these Bylaws.
 
 Formal corporate documents, including executed contracts, government filings, board resolutions, and certifications, shall be authenticated by the signatures of at least half of the then-serving directors, including the Executive Director. Authentication signatures shall be obtained within ten (10) business days of a request by the Executive Director, and may be provided electronically. This requirement scales with board size: at three directors, two signatures are required; at four or five directors, three signatures are required; and so on.
+
+### 3.12 Mission Stewardship and Director Standards
+
+In addition to the other requirements of this Article, each director shall:
+
+(a) affirm the mission and governing principles in Section 1.5 upon election and at each annual governance review thereafter;
+
+(b) exercise independent judgment in furtherance of the Corporation's charitable purposes;
+
+(c) disclose institutional, professional, financial, familial, or governance relationships that could materially compromise that judgment;
+
+(d) refrain from representing the interests of a donor, employer, political organization, grantee, contractor, capital recipient, or partner while acting as a director; and
+
+(e) recuse where a material conflict exists, consistent with the Conflict of Interest Policy.
 
 ---
 
@@ -133,9 +171,9 @@ The Executive Director is the chief executive officer of the Corporation, respon
 
 (c) preparing and presenting to the Board an annual budget, operating plan, and regular performance reports;
 
-(d) maintaining the official records of the Corporation and circulating Board action items and notices as required by these Bylaws;
+(d) ensuring the official records of the Corporation are maintained and Board action items and notices are circulated as required by these Bylaws, whether personally or through a Party the Executive Director designates;
 
-(e) ensuring compliance with applicable law and all Board-adopted policies, and promptly reporting to the Board any material legal, financial, operational, or reputational risks;
+(e) ensuring compliance with applicable law and all Board-adopted policies, and reporting to the Board, within 15 days of notification, any material legal, financial, operational, or reputational risks;
 
 (f) managing relationships with funders, partners, and other stakeholders in furtherance of the mission.
 
@@ -181,13 +219,17 @@ Advisory Board members have no governance authority, no fiduciary duties to the 
 
 The Board shall act primarily by written consent without a meeting. Any action required or permitted to be taken by the Board may be taken by written consent of a majority of then-serving directors, delivered by electronic mail, electronic signature, or other electronic transmission. A director who does not respond within the specified window is counted as not consenting for purposes of calculating whether majority has been achieved. Written consent shall be filed with the corporate records in the same form in which it was received.
 
+Consent is given to the specific version of a matter as circulated at the time of consent. A subsequent revision to the matter invalidates any consent already given, which must be given again against the revised version. Recusal, once declared, remains in effect independent of any subsequent revision to the matter.
+
 ### 7.2 Response Window
 
-The Executive Director shall specify a response deadline when circulating any matter for written consent. The standard response window is fourteen (14) calendar days. For urgent matters, the Executive Director may specify a shorter window of not less than forty-eight (48) hours, stating the reason for urgency. A director who does not respond by the deadline has not consented. The action passes if a majority of all then-serving directors have consented by the deadline; otherwise it fails and the Executive Director shall notify all directors of that outcome.
+A Human designated by the Executive Director shall specify a response deadline when circulating any matter for written consent. The standard response window is ninety-one (91) calendar days. For urgent matters, a shorter window of not less than forty-eight (48) hours may be specified, stating the reason for urgency. There is no requirement as to when a matter may be circulated for written consent; the response window runs from the date of circulation regardless of when that date falls. A director who does not respond by the deadline has not consented. If a majority of all then-serving directors have not consented by the deadline, the action fails, and the pull request implementing it closes automatically, without requiring further action by any director or the Executive Director.
 
 ### 7.3 Synchronous Meetings
 
 Any director or the Executive Director may request a synchronous meeting (by telephone or video conference) for any agenda item in lieu of or in addition to written consent. Such a request shall be honored. Synchronous meetings require notice of at least forty-eight (48) hours to all directors, specifying the agenda. At a synchronous meeting, a majority of then-serving directors constitutes a quorum, and actions require the vote thresholds specified in Section 7.4. Directors may not vote by proxy.
+
+In addition to any synchronous meeting requested under this Section, the Board shall hold a minimum number of synchronous meetings each fiscal year, scaling with the Corporation's size and financial activity as follows: (a) one meeting per fiscal year for so long as the Board consists of three to four directors and annual revenue remains below the threshold in Section 8.6 for a financial review; (b) two meetings per fiscal year once the Board reaches five or more directors, or once annual revenue exceeds the financial review threshold in Section 8.6, whichever occurs first; (c) four meetings per fiscal year once annual revenue exceeds the audit threshold in Section 8.6. A Human designated by the Executive Director shall track which threshold currently applies and shall schedule meetings accordingly. A synchronous meeting held to satisfy this requirement may also serve as the annual governance review meeting under Section 7.5 where the timing permits.
 
 ### 7.4 Vote Threshold
 
@@ -195,11 +237,11 @@ All Board actions, whether taken by written consent under Section 7.1 or by vote
 
 ### 7.5 Annual Governance Review
 
-The Board shall complete an annual governance review by written consent or synchronous meeting no later than ninety (90) days after the close of each fiscal year. The annual governance review shall include: approval of the prior year financial summary presented by the Executive Director; confirmation of each director's independence status under Section 3.3, conducted among the Independent Directors without the Executive Director present; review of the Form 990 before filing per Section 8.5; and any director elections required by expiring terms. The Executive Director shall circulate materials for the annual governance review at least fourteen (14) days before the response deadline.
+The Board shall complete an annual governance review by written consent or synchronous meeting no later than ninety (90) days after the close of each fiscal year. The annual governance review shall include: approval of the prior year financial summary presented by the Executive Director; confirmation of each director's independence status under Section 3.3, conducted among the Independent Directors without the Executive Director present; review of the Form 990 before filing per Section 8.5; a review of whether the Corporation's major activities remain aligned with its mission and governing principles under Section 1.5, per Section 9.6; review of the succession and continuity plan under Section 9.8; and any director elections required by expiring terms. A Human designated by the Executive Director shall circulate materials for the annual governance review.
 
 ### 7.6 Records
 
-The Executive Director shall maintain a written record of all Board actions, whether taken by written consent or at a synchronous meeting, including the date, the matter acted upon, the vote or consent outcome, and the names of all directors who consented, voted, abstained, or did not respond.
+A Party designated by the Executive Director shall maintain a written record of all Board actions, whether taken by written consent or at a synchronous meeting, including the date, the matter acted upon, the vote or consent outcome, and the names of all directors who consented, voted, abstained, or did not respond.
 
 ---
 
@@ -233,6 +275,8 @@ The Board shall commission an independent financial review from a qualified exte
 
 All compensation paid to the Executive Director and any other officers or key employees shall be approved in advance by the Board's Independent Directors acting without the Executive Director present, based on documented comparability data. The decision and its basis shall be recorded in the consent or meeting record. The Corporation shall disclose all compensation as required on Form 990.
 
+An officer or key employee may decline, in writing, all or part of any compensation or other benefit that would otherwise require review under this Section. The declination is binding for the period it states and may not later be reversed to claim compensation for that period. Where a declination is made, the Independent Directors' review requirement under this Section is satisfied by their written acknowledgment of the declination; the comparability-data and documented-basis requirements of this Section apply only to compensation or a benefit that is actually provided. A decision to provide compensation or a benefit for a future period requires a fresh review under this Section.
+
 ---
 
 ## Article IX: 501(c)(3) Compliance
@@ -251,43 +295,122 @@ The Corporation shall not participate or intervene in any political campaign on 
 
 ### 9.4 Lobbying
 
-The Corporation may engage in lobbying activity, including direct and grassroots lobbying, within limits permitted by Section 501(c)(3) and, if the 501(h) election is in effect, within the expenditure limits of Section 4911. The Executive Director shall maintain lobbying expenditure records and report them to the Board quarterly as part of the financial summary required by Section 8.4. The Board shall authorize the filing of IRS Form 5768 (501(h) election) and may revoke or re-file that election by majority vote.
+The Corporation may engage in lobbying activity, including direct and grassroots lobbying, within limits permitted by Section 501(c)(3) and, if the 501(h) election is in effect, within the expenditure limits of Section 4911. A Human designated by the Executive Director shall maintain lobbying expenditure records and report them to the Board quarterly as part of the financial summary required by Section 8.4. The Board shall authorize the filing of IRS Form 5768 (501(h) election) and may revoke or re-file that election by majority vote.
 
 ### 9.5 Organizational Test
 
 The Corporation shall not amend these Bylaws or its Certificate of Incorporation in any manner that would cause it to fail the organizational test under Section 501(c)(3) or that would permit its assets to inure to the benefit of any private person.
 
+### 9.6 Mission Integrity and Program Alignment Review
+
+Before undertaking any material new program, campaign, research initiative, partnership, capital initiative, or expansion into a new substantive domain, a Party designated by the Executive Director shall complete a documented mission-alignment review addressing:
+
+(a) what condition affecting human dignity, autonomy, or wellbeing is being addressed;
+
+(b) what systemic, institutional, political, economic, social, or market failure contributes materially to the problem;
+
+(c) what evidence supports the Corporation's understanding of the problem;
+
+(d) what leverage point the Corporation can plausibly influence;
+
+(e) why the Corporation is an appropriate organization to intervene;
+
+(f) what intended outcome would constitute meaningful improvement;
+
+(g) what metrics or evidence could indicate whether the intervention is succeeding;
+
+(h) what foreseeable harms, tradeoffs, conflicts, or unintended consequences exist;
+
+(i) what assumptions underlying the initiative could prove wrong, which could jeopardize its success, and how they will be mitigated; and
+
+(j) under what circumstances the initiative should be revised, suspended, or terminated.
+
+The completed review shall be provided to the Board before the initiative is undertaken. The annual governance review under Section 7.5 shall include a review of whether the Corporation's major activities remain aligned with its mission and the governing principles in Section 1.5. Where the same initiative is subject to a review under this Section and a companion policy, a single review may satisfy both if it satisfies each applicable requirement.
+
+### 9.7 Organizational Independence
+
+The Corporation shall maintain independent judgment in its research, publications, advocacy, partnerships, and strategic decisions. No donor, investor, grantee, contractor, capital recipient, political actor, partner organization, or other outside party may be given contractual or practical authority to control:
+
+(a) research findings or conclusions;
+
+(b) editorial framing;
+
+(c) whether unfavorable findings may be published;
+
+(d) publication timing for the purpose of suppressing or manipulating findings;
+
+(e) advocacy conclusions;
+
+(f) personnel decisions involving researchers or editors made because of their legitimate findings;
+
+(g) Board appointments or removals;
+
+(h) interpretation of the Corporation's mission; or
+
+(i) programmatic decisions where the outside party has a material conflicting interest.
+
+Operational implementation of this principle is governed by the Corporation's companion policies. A Human designated by the Executive Director shall disclose to the Board any funding concentration or other relationship that could reasonably threaten the independence required by this Section, and the Board shall review any such disclosure at the next regular opportunity.
+
+### 9.8 Succession and Continuity Planning
+
+The Board shall maintain a written succession and continuity plan addressing, at minimum:
+
+(a) executive leadership succession;
+
+(b) Board leadership succession;
+
+(c) emergency delegation of authority;
+
+(d) preservation of governance records, institutional knowledge, research records, and critical credentials; and
+
+(e) continuity of essential financial, legal, compliance, and technology functions.
+
+The plan shall be reviewed at each annual governance review under Section 7.5 and within 15 days of notification of any material change in leadership or organizational structure. The plan shall be designed so that the Corporation's identity and effectiveness do not depend on any individual founder, executive, director, donor, or institutional relationship.
+
 ---
 
 ## Article X: Companion Policies
 
-### 10.1 Policy Documents
+### 10.1 Definitions
 
-The Corporation's operational standards, editorial guidelines, and specific compliance procedures shall be maintained as separate Board-adopted policy documents rather than as provisions of these Bylaws. This structure permits policies to be updated as operations evolve without requiring bylaw amendments, while maintaining Board-level accountability for each policy.
+**Automated System.** Has the meaning assigned to Automated System in the Human Labor and Artificial Intelligence Use Policy.
+
+**Human.** Has the meaning assigned to Human in the Strategic Prioritization and Resource Allocation Policy.
+
+**Party.** Has the meaning assigned to Party in the Strategic Prioritization and Resource Allocation Policy.
 
 ### 10.2 Required Policies
 
-The Board shall adopt, and shall maintain in current form, the following policy documents:
+The Corporation's operational standards, editorial guidelines, and specific compliance procedures shall be maintained as separate Board-adopted companion policy documents. Each companion policy shall comply with these Bylaws.
 
-**(a) Conflict of Interest Policy.** Governing the identification, disclosure, and resolution of actual and potential conflicts of interest affecting directors, officers, and key employees. This policy shall meet the standards set forth in Appendix A of the IRS Form 1023 instructions, as updated. All directors and officers shall complete the annual disclosure required by this policy.
+The Board shall adopt, and shall maintain in current form, the following companion policies:
 
-**(b) Document Retention and Destruction Policy.** Governing the retention, protection, and destruction of corporate records, with retention periods consistent with applicable legal requirements.
+**(a) Conflict of Interest Policy.** Governing conflicts of interest.
+**(b) Document Retention and Destruction Policy.** Governing retention and destruction of corporate records.
 
-**(c) Whistleblower Protection Policy.** Protecting directors, officers, employees, and volunteers who in good faith report suspected violations of law or organizational policy from retaliation.
+**(c) Whistleblower Protection Policy.** Governing reporting of suspected misconduct and protection against retaliation.
+**(d) Editorial and Compliance Policy.** Governing editorial and compliance standards.
+**(e) Capital Deployment and Partnership Policy.** Governing capital deployment and organizational partnerships.
 
-**(d) Editorial and Compliance Policy.** Governing the Corporation's content production standards, including: the nonpartisan editorial standard; lobbying expenditure classification and allocation procedures; prohibited content; and specific call-to-action requirements for policy intervention content. This policy shall include any periodic content restrictions the Board determines are appropriate to protect the Corporation's nonpartisan character.
+**(f) External Funding Acceptance Policy.** Governing acceptance of external funding.
+**(g) Strategic Prioritization and Resource Allocation Policy.** Governing strategic prioritization and allocation of organizational resources.
+**(h) Communication Platform Administration Policy.** Governing administration of the Corporation's communication platforms.
+**(i) Human Labor and Artificial Intelligence Use Policy.** Governing use of human labor, artificial intelligence, and automated systems.
+**(j) Project Operations and Reporting Policy.** Governing operational reporting, feedback, and Board oversight of Projects.
 
-**(e) Capital Deployment and Partnership Policy.** Governing the identification, evaluation, approval, and documentation of capital facilitation activities and organizational partnerships, including outcome documentation standards.
-
-**(f) External Funding Acceptance Policy.** Governing the acceptance and rejection of grants and donations, including minimum standards for donor restrictions that preserve the Corporation's editorial and research independence.
+The Corporation's conflict-of-interest framework shall meet the standards set forth in Appendix A of the IRS Form 1023 instructions, as updated. All directors and officers shall complete an annual conflict of interest disclosure.
 
 ### 10.3 Policy Adoption and Amendment
 
-Companion policies shall be adopted and amended pursuant to Article VII. New policies and material amendments shall be distributed to all directors at least fourteen (14) days before the consent deadline or synchronous meeting. The Board shall review all companion policies at least every two years.
+Companion policies shall be adopted and amended pursuant to Article VII. The Board shall review all companion policies at least every two years.
 
 ### 10.4 Policy Compliance
 
-The Executive Director is responsible for implementing all Board-adopted policies and for reporting material deviations to the Board promptly.
+The Executive Director is responsible for implementing all Board-adopted policies and for reporting material deviations to the Board within 15 days of notification.
+
+### 10.5 Automated System Task Eligibility
+
+Except where these Bylaws explicitly require a Human to perform a task, whether that task may be performed by an Automated System is governed by the Human Labor and Artificial Intelligence Use Policy.
 
 ---
 
@@ -319,7 +442,7 @@ The Corporation shall maintain at its principal office, or at such other locatio
 
 (c) all currently adopted companion policies;
 
-(d) records of all Board actions, whether taken by written consent or at a synchronous meeting, as maintained by the Executive Director under Section 7.6;
+(d) records of all Board actions, whether taken by written consent or at a synchronous meeting, as maintained under Section 7.6;
 
 (e) annual conflict of interest disclosures;
 
@@ -337,15 +460,15 @@ Directors shall have the right to inspect and copy corporate records at any reas
 
 ### 13.1 Procedure
 
-These Bylaws may be amended pursuant to Article VII, provided the proposed amendment has been distributed to all directors in writing at least fourteen (14) days before the consent deadline or synchronous meeting.
+These Bylaws may be amended pursuant to Article VII.
 
 ### 13.2 Limits
 
-No amendment may: (a) cause the Corporation to fail the organizational or operational test under Section 501(c)(3); (b) eliminate the independence requirement of Section 3.3; or (c) eliminate or reduce the conflict of interest policy requirement below the level expected by the IRS for organizations seeking or maintaining 501(c)(3) exemption.
+No amendment may: (a) cause the Corporation to fail the organizational or operational test under Section 501(c)(3); (b) eliminate the independence requirement of Section 3.3; (c) eliminate or reduce the conflict of interest policy requirement below the level expected by the IRS for organizations seeking or maintaining 501(c)(3) exemption; or (d) eliminate or materially weaken the organizational independence principle in Section 9.7.
 
 ---
 
-## Article XIV: Dissolution
+## Article XIV: Dissolution, Merger, and Fundamental Restructuring
 
 ### 14.1 Authorization
 
@@ -353,9 +476,25 @@ The Corporation may be dissolved pursuant to Article VII and subject to Delaware
 
 ### 14.2 Distribution of Assets
 
-Upon dissolution, after satisfying all lawful debts and liabilities, remaining assets shall be distributed to one or more organizations organized and operated exclusively for charitable, scientific, or educational purposes under Section 501(c)(3), with preference for organizations whose missions overlap with the Corporation's stated purposes. If no qualified recipient is identified, assets shall be distributed to the federal government or to a state or local government for a public purpose.
+Upon dissolution, after satisfying all lawful debts and liabilities, remaining assets shall be distributed to one or more organizations organized and operated exclusively for charitable, scientific, or educational purposes under Section 501(c)(3) whose purposes substantially advance the Corporation's mission and governing principles under Section 1.5, to the maximum extent legally permissible. Assets may be distributed to a Section 501(c)(3) organization without a substantially aligned mission only if the Board documents that no reasonably suitable mission-aligned recipient exists. If no qualified recipient of any kind is identified, assets shall be distributed to the federal government or to a state or local government for a public purpose.
 
 ### 14.3 Winding Up
 
-The Executive Director, under Board oversight, shall manage the winding-up of affairs, including satisfying liabilities, closing accounts, and completing required government filings.
+A Human designated by the Executive Director, under Board oversight, shall manage the winding-up of affairs, including satisfying liabilities, closing accounts, and completing required government filings.
+
+### 14.4 Merger and Fundamental Restructuring
+
+Before approving a merger, conversion, transfer of substantially all organizational assets, or other transaction that could effectively terminate the Corporation's independent existence, the Board shall make written findings addressing:
+
+(a) whether the transaction preserves the Corporation's mission and governing principles under Section 1.5;
+
+(b) whether the surviving or acquiring organization is bound to substantially compatible charitable purposes;
+
+(c) whether the transaction threatens the research, editorial, or institutional independence protected by Section 9.7;
+
+(d) whether restricted charitable assets remain properly dedicated; and
+
+(e) whether an alternative structure would better preserve the Corporation's purposes.
+
+These findings shall be completed and provided to the Board before any vote to approve the transaction.
 
