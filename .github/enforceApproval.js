@@ -111,18 +111,20 @@ async function fetchCommentSignals(octokit, owner, repo, pull_number, registered
 // If this run was triggered by new commits being pushed to an already-open
 // PR, any consent given before those commits was given to a version of the
 // matter that no longer exists. Per Bylaws Section 7.1, such consent is
-// invalidated and must be reissued. This function dismisses existing review
-// approvals and change-requests via GitHub's native dismissal mechanism
-// (which preserves the review in history marked as dismissed, rather than
-// deleting it, since GitHub does not permit deleting a submitted review),
-// and removes existing /consent and /dissent comments after first posting
+// invalidated and must be reissued. This function dismisses review
+// approvals and change-requests submitted before the triggering push via
+// GitHub's native dismissal mechanism (which preserves the review in
+// history marked as dismissed, rather than deleting it, since GitHub does
+// not permit deleting a submitted review), and removes /consent and
+// /dissent comments posted before the triggering push after first posting
 // one consolidated comment reproducing their full original content, so nothing
 // is actually lost, only relocated out of the individual comments and into a
-// single record. Recusal (/recuse comments, and PR-body "Recusal:"
+// single record. Consent given after the triggering push is left untouched.
+// Recusal (/recuse comments, and PR-body "Recusal:"
 // declarations, neither of which this function touches) remains in effect
 // independent of any revision to the matter, since a conflict of interest
 // does not depend on the specific text under consideration.
-async function resetConsentOnNewCommits(octokit, owner, repo, pull_number, registeredVoters) {
+async function resetConsentOnNewCommits(octokit, owner, repo, pull_number, registeredVoters, cutoffMs) {
   let reviews = [], rPage = 1;
   while (true) {
     const { data } = await octokit.pulls.listReviews({ owner, repo, pull_number, per_page: 100, page: rPage });
@@ -133,6 +135,8 @@ async function resetConsentOnNewCommits(octokit, owner, repo, pull_number, regis
   for (const r of reviews) {
     const login = (r.user && r.user.login || "").toLowerCase();
     if (!registeredVoters.has(login)) continue;
+    const submittedMs = Date.parse(r.submitted_at || r.submittedAt || "");
+    if (!Number.isFinite(submittedMs) || submittedMs > cutoffMs) continue;
     if (r.state !== "APPROVED" && r.state !== "CHANGES_REQUESTED") continue;
     try {
       await octokit.pulls.dismissReview({
@@ -157,6 +161,8 @@ async function resetConsentOnNewCommits(octokit, owner, repo, pull_number, regis
     const login = (c.user && c.user.login || "").toLowerCase();
     if (!registeredVoters.has(login)) continue;
     if (c.user.type === "Bot") continue;
+    const createdMs = Date.parse(c.created_at || "");
+    if (!Number.isFinite(createdMs) || createdMs > cutoffMs) continue;
     const body = c.body || "";
     const hasRecuse = /(?:^|\s)\/recuse(?:\s|$)/im.test(body);
     if (hasRecuse) continue;
@@ -362,7 +368,14 @@ async function postCheckRun(octokit, owner, repo, headSha, conclusion, title, su
     // applies to the current content and must be reset before evaluating
     // consent below, per Bylaws Section 7.1.
     if (process.env.GITHUB_EVENT_NAME === "pull_request" && payload.action === "synchronize") {
-      await resetConsentOnNewCommits(octokit, owner, repo, pull_number, votersLC);
+      // Reset operations are bound to signals that already existed at this
+      // event's pull_request.updated_at cutoff, so consent given afterward
+      // survives a re-run of the same event.
+      const cutoffMs = new Date(payload.pull_request && payload.pull_request.updated_at || 0).getTime();
+      if (!Number.isFinite(cutoffMs) || cutoffMs <= 0) {
+        throw new Error("Cannot safely reset consent: synchronize event has no valid pull_request.updated_at timestamp.");
+      }
+      await resetConsentOnNewCommits(octokit, owner, repo, pull_number, votersLC, cutoffMs);
     }
 
     // Recusal declared in the PR body is absolute: it applies regardless of
