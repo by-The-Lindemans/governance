@@ -38,9 +38,9 @@ Capital deployment and partnership activity shall not:
 
 Before bringing any capital deployment opportunity to the Board, the Executive Director shall evaluate it against the following criteria:
 
-**(a) Impact Clarity:** The degree of confidence that the deployment will produce a measurable reduction in atmospheric CO2 or advance another stated exempt purpose.
+**(a) Certainty of Effect:** The degree of confidence that the deployment will produce a measurable reduction in atmospheric CO2 or advance another stated exempt purpose.
 
-**(b) Capital Criticality:** Whether the opportunity would proceed without the Corporation's involvement, or whether capital is the binding constraint on execution.
+**(b) Capital Additionality:** Whether the opportunity would proceed without the Corporation's involvement, or whether capital is the binding constraint on execution.
 
 **(c) Timeline:** The expected period between capital deployment and outcome realization.
 
