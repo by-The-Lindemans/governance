@@ -10,7 +10,7 @@ This policy governs how restore280 Institute identifies, prioritizes, and resour
 
 This policy decides *what* the Corporation works on and *how much* capital and labor hours go to it. Execution of a selected initiative is governed by the Corporation's other companion policies, whose evaluation criteria apply once this policy has determined that a given initiative will be resourced.
 
-This policy operates in two levels: Domains and Projects. Section 3 defines the relationship between them.
+This policy operates in three levels: Domains, Projects, and Intra-Project Initiatives. Section 3 defines the relationship among them.
 
 Corporation capital or Corporation labor hours may not be committed to any activity that has not been approved as a Project under this policy, except for (a) functions the Bylaws require the Corporation to perform, or (b) any actions necessary to establish or maintain the Corporation's basic operational capacity, provided the action is specifically authorized by Board resolution.
 
@@ -28,9 +28,23 @@ Corporation capital or Corporation labor hours may not be committed to any activ
 
 **Option.** A candidate Domain or candidate Project under consideration in a given round of this process. Any director or the Executive Director may propose an Option for consideration.
 
-**Importance.** A 0–10 score representing the Corporation's best estimate of the most likely outcome, the level of mission impact the Corporation believes with 50% confidence it can achieve, if the Option were fully resourced. Importance is not a probability of success; it is a median-case estimate of impact conditional on resourcing.
+**Intra-Project Initiative.** A specific action, task, or sub-workstream undertaken within a selected Project that consumes a portion of that Project's Money Allocation or Time Allocation. Intra-Project Initiatives are prioritized by the Executive Director within the board-approved scope of the Project and do not require separate Board approval.
 
-**Urgency.** A 0–10 score representing the Option's current relevance to public attention: expected alignment with current public opinion where polling data exists, and a qualitative assessment of the Option's presence in current public discourse.
+**Magnitude.** A 0–10 score assigned to a Project Option representing the scale of mission-aligned impact the Corporation believes with 50% confidence it can achieve if the Option were fully resourced, measured against the Corporation's primary atmospheric goal. Magnitude encompasses direct atmospheric impact and future additionality impact as described in Section 5.5. Magnitude applies to Project-level rounds only.
+
+**Probability.** A 0–10 score assigned to a Project Option representing the likelihood that the Option's proposed mechanism functions as described under real-world conditions, based on its demonstration status, the existence and clearability of known technical, regulatory, and organizational barriers, and the Corporation's capacity to execute the work. A score of zero indicates a known insurmountable barrier. Probability applies to Project-level rounds only.
+
+**Additionality.** A 0–10 score assigned to a Project Option representing the fraction of the Option's projected impact that would not occur in the absence of the Corporation's involvement. Additionality encompasses direct additionality and future additionality as described in Section 5.6. A score of zero indicates that the full projected impact would occur without the Corporation's involvement. Additionality applies to Project-level rounds only.
+
+**Expected Leverage Score.** For a Project Option, the product of its Magnitude, Probability, and Additionality scores. The Expected Leverage Score is converted to a Percentile Rank under Section 6.1 and serves as the sole scoring input for all subsequent weighted scoring and allocation computations in place of Importance and Urgency. Applies to Project-level rounds only.
+
+**Necessary Condition.** A state of affairs that must be true for a given Project goal to be achievable. A Necessary Condition that is not currently satisfied constitutes an obstacle to the goal.
+
+**Frontier Obstacle.** The Necessary Condition for a Project goal that is currently unsatisfied and whose satisfaction is required before any downstream Necessary Conditions become accessible.
+
+**Importance.** A 0–10 score representing the Corporation's best estimate of the most likely outcome, the level of mission impact the Corporation believes with 50% confidence it can achieve, if the Option were fully resourced. Importance is not a probability of success; it is a median-case estimate of impact conditional on resourcing. Importance applies to Domain-level rounds only.
+
+**Urgency.** A 0–10 score representing the Option's current relevance to public attention: expected alignment with current public opinion where polling data exists, and a qualitative assessment of the Option's presence in current public discourse. Urgency applies to Domain-level rounds only.
 
 **Percentile Rank.** An Option's Importance or Urgency score expressed as its rank position among all Options under consideration in the same round, from 0 (lowest) to 100 (highest).
 
@@ -54,7 +68,7 @@ Corporation capital or Corporation labor hours may not be committed to any activ
 
 ---
 
-## 3. Domain and Project Levels
+## 3. Domain, Project, and Intra-Project Levels
 
 ### 3.1 Domains
 
@@ -68,6 +82,10 @@ Once Domains are selected, a separate Project-level round is conducted independe
 
 Each Domain's Project-level round uses that Domain's own Money Allocation and Time Allocation, determined by the prior Domain-level round, as the Money Pool and Time Pool for that Project round.
 
+### 3.3 Intra-Project Initiatives
+
+Within each selected Project, the Executive Director may authorize Intra-Project Initiatives without separate Board approval, provided each such Initiative remains within the board-approved scope of the Project as documented in that Project's Baseline Record. An Intra-Project Initiative that would alter the Project's purpose, expand its scope beyond the Baseline Record, or commit resources beyond its approved Money Allocation or Time Allocation requires Board approval before it may proceed. Such a departure constitutes a Material Deviation under the Project Operations and Reporting Policy and is governed by that policy's procedures.
+
 ---
 
 ## 4. Option Identification
@@ -80,7 +98,7 @@ Before a scoring round begins, a Human designated by the Executive Director shal
 
 ### 5.1 Who Scores
 
-A Human designated by the Executive Director shall score each Option's Importance and Urgency, and classify its Limiting Factor, using the quantitative methodology in this Section.
+A Human designated by the Executive Director shall score each Option and classify its Limiting Factor using the quantitative methodology in this Section. Domain-level Options are scored under Sections 5.2 through 5.4. Project-level Options are scored under Sections 5.5 through 5.8. Intra-Project Initiative prioritization uses the analytical process in Section 5.9.
 
 ### 5.2 Importance Scoring
 
@@ -93,6 +111,26 @@ The Urgency score for each Option shall be based on: (a) publicly available poll
 ### 5.4 Limiting Factor Classification
 
 A Human designated by the Executive Director shall classify each Option as Money-Limited or Time-Limited. An Option is Money-Limited if its capacity to use additional resources productively is constrained by capital rather than labor hours: it can absorb materially more or less capital in reasonable proportion to the amount provided, while its labor-hour requirement is comparatively fixed. An Option is Time-Limited if the reverse holds: it can absorb materially more or less labor in reasonable proportion to the amount provided, while its capital requirement is comparatively fixed. The scorer shall document the basis for each classification.
+
+### 5.5 Project-Level: Magnitude Scoring
+
+The Magnitude score for each Project Option shall represent the scale of mission-aligned impact the Corporation believes with 50% confidence it can achieve if the Option were fully resourced, measured against the Corporation's primary atmospheric goal. Magnitude encompasses: (a) direct atmospheric impact, expressed as a median-case estimate of CO2e reduction or avoided emissions attributable to the Project; and (b) future additionality impact, expressed as a median-case estimate of CO2e reduction attributable to future Projects the Corporation could execute as a result of capabilities this Project develops, provided a documented causal chain connects the capability gain to a specific future direct atmospheric outcome. A general increase in organizational capacity without such a documented causal chain does not qualify. The scorer shall document the basis for the estimate and whether the score reflects direct impact, future additionality impact, or both.
+
+### 5.6 Project-Level: Additionality Scoring
+
+The Additionality score for each Project Option shall represent the fraction of the Option's projected impact that would not occur in the absence of the Corporation's involvement. Additionality encompasses: (a) direct additionality, being the portion of projected atmospheric impact above the counterfactual baseline; and (b) future additionality, being the portion of organizational capability gained through the Project that would not exist absent the Corporation's action and that has a documented causal chain to future direct atmospheric impact the Corporation could not otherwise achieve. The scorer shall document the counterfactual baseline assumed, the basis for the score, and, for any future additionality claimed, the specific future impact the capability gain is expected to enable and why that impact would not occur without this capability.
+
+### 5.7 Project-Level: Probability Scoring
+
+The Probability score for each Project Option shall represent the likelihood that the Option's proposed mechanism functions as described under real-world conditions. The scorer shall document the Option's demonstration status, the existence and clearability of known technical, regulatory, and organizational barriers, and the Corporation's current capacity to execute the work. An Option whose proposed mechanism is blocked by a known insurmountable barrier receives a Probability score of zero.
+
+### 5.8 Project-Level: Expected Leverage Score
+
+Each Project Option's Expected Leverage Score is the product of its Magnitude, Probability, and Additionality scores. The Expected Leverage Score is converted to a Percentile Rank under Section 6.1 and used as the sole input in place of Importance and Urgency for all subsequent weighted scoring and allocation computations. An Option whose Expected Leverage Score is zero is not eligible for selection under Section 6.2.
+
+### 5.9 Intra-Project: Barrier Analysis
+
+Before allocating any portion of a Project's Money Allocation or Time Allocation to an Intra-Project Initiative, the Executive Director shall document: (a) the Necessary Conditions for the Project goal, in dependency order; (b) the current Frontier Obstacle, being the Necessary Condition currently unsatisfied whose satisfaction is required before downstream conditions become accessible; and (c) how the proposed Initiative addresses the current Frontier Obstacle. Resources shall be directed toward Intra-Project Initiatives that address the current Frontier Obstacle before Initiatives addressing downstream conditions. The barrier analysis shall be updated whenever the Frontier Obstacle changes. Where multiple Initiatives each address the current Frontier Obstacle, the Executive Director shall prioritize among them by estimated impact on that obstacle per unit of resource consumed.
 
 ---
 
@@ -125,6 +163,8 @@ Every Option meeting the Eligibility Threshold under Section 6.2 is selected for
 A Party designated by the Executive Director shall prepare a proposal identifying the Options selected under Section 7 and their resulting Money Allocation and Time Allocation under Section 9. The Board shall approve the proposal by ordinary written consent under Bylaws Article VII.
 
 The Board's approval applies to the proposal as a whole. This policy does not provide for the Board approving some selected Options while rejecting others, or for the Board substituting a different selection for the one produced under Section 7. If the Board does not approve the proposal, no Option is selected for the round. The Executive Director or a director may propose a revised round, including a revised Money Pool or Time Pool, revised scoring, or a revised Option list, to address the Board's concerns.
+
+Intra-Project Initiatives within a board-approved Project do not require separate Board approval, provided they remain within the Project's board-approved scope as documented in its Baseline Record and within its approved Money Allocation and Time Allocation. Board approval is required before any Intra-Project Initiative that would constitute a Material Deviation under the Project Operations and Reporting Policy may proceed.
 
 ---
 
